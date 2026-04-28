@@ -24,3 +24,7 @@ mergeSort(arr, low , high){
 }
 ```
 
+## QuickSort :
+pick a pivot or any number in the array, and place the number in the sorted place in that array , repeat these steps again and again...
+
+when pivot put on correct place , make other smaller elements on left of pivot and greater on right side of it. 

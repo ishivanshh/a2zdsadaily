@@ -105,8 +105,8 @@ void mergeSort(vector <int> &arr , int n){
 }
 
 
-
-int partition(int arr[], int low, int high){
+// time complexity => o(nlogn) and space complexity => o(logn)
+int partition(vector<int> arr, int low, int high){
     int pivot = arr[low];
     int i = low;
     int j = high;
@@ -114,7 +114,7 @@ int partition(int arr[], int low, int high){
         while(arr[i] <= pivot && i<= high -1){
             i++;
         }
-        while(arr[i] > pivot && j>=low+1){
+        while(arr[j] > pivot && j>=low+1){
             j--;
         }
         if(i<j){
@@ -125,23 +125,28 @@ int partition(int arr[], int low, int high){
     }
 }
 
-void quick_sort(int arr[],int low,  int high){
+void qs(vector<int> arr,int low,  int high){
     if(low<high){
         int pindex= partition(arr,low,high);
-        quick_sort(arr,low,pindex-1);
-        quick_sort(arr,pindex+1,high);
+        qs(arr,low,pindex-1);
+        qs(arr,pindex+1,high);
     }
+}
+
+vector<int> quick_sort( vector<int> arr, int low, int high){
+    qs(arr,0,arr.size()-1);
+    return arr;
 }
 
 int main() {
     int n;
     cin >> n;
 
-    vector <int> arr(n);
+    vector<int> arr(n);
     for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
-    mergeSort(arr, n);
+    quick_sort(arr, 0, n-1);
     for(int i = 0; i < n; i++){
         cout << arr[i] << " ";
     }
