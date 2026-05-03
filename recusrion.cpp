@@ -8,14 +8,15 @@ using namespace std;
 
 void func(int i, int n){
     if (i>n) return; 
-    cout << "i love rose!" << endl;
+    cout << "i love cricket!" << endl;
     func(i+1,n);
 }
-int main(){
-    int n;
-    cin >> n;
-    func(1,n);
-}
+
+// int main(){
+//     int n;
+//     cin >> n;
+//     func(1,n);
+// }
 
 // 2. print lineraly from 1 to n
 
@@ -42,9 +43,9 @@ void func3(int i, int n){
 }
 
 // int main(){
-//     int n;
-//     cin >> n;
-//     func3(n,n);
+//      int n;
+//      cin >> n;
+//      func3(n,n);
 // }
 
 // 4. print in reverse order from n to 1 using backtracking. means after recursion we will print the value of i.
@@ -57,7 +58,7 @@ void func4(int i, int n){
 
 
 // int main(){
-//     int n;
+//    int n;
 //     cin >> n;
 //     func4(n,n);
 // }
@@ -141,16 +142,19 @@ void func9(int i, int arr[], int n){
 
 //10. check is a string is palindrome(string on reversal reads the same) or not
 
+// i = 0 , s = madsm
+// s.size()/2 => 3
+// s[i] = m .... s[n-i-1] =  m same again call function s[i] = a.... s[n-i-1] = s not same condition satisfy return false;
 bool func(int i, string s){
     if(i>=s.size()/2) return true;
     if(s[i] != s[s.size()-i-1]) return false;
     return func(i+1,s);
 }
 
-// int main(){
-//     string s = "madsm";
-//     cout << func(0,s);
-// }
+int main(){
+    string s = "madam";
+     cout << func(0,s);
+}
 
 
 // ..................................
@@ -168,9 +172,9 @@ int func11(int n){
     return last + seclast;
 }
 
-int main(){
-    int n;
-    cin >> n;
-    cout << func11(n);
-}
+// int main(){
+//     int n;
+//     cin >> n;
+//     cout << func11(n);
+// }
 

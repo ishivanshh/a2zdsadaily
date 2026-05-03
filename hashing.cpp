@@ -7,15 +7,16 @@
 using namespace std;
 
 // hashing of numbers in an array.
-/*
+
 int main(){
     int n;
     cin >> n;
     int arr[n];
+    // input array
     for(int i = 0; i <n; i++){
         cin >> arr[i];
     }
-
+    // precompute
     int hash[13] = {0};
     for(int i=0; i<n;i++){
         hash[arr[i]] += 1;
@@ -26,15 +27,20 @@ int main(){
     while(q--){
         int num;
         cin >> num;
+        // fetching 
         cout << hash[num] << endl;
     }
     return 0;
 }
-
+// input type case 
+// 5    => size of array
+// 1 3 2 1 4 => array elements
+// 5 => number of queries
+// 2 3 1 5 6  => queries to fetch the count of numbers in the arrays
 
 
 // hashing of strings in an array.
-
+/*
 int main(){
     string s;
     cin >> s;
@@ -60,7 +66,7 @@ int main(){
 
 // using map STL for larger size of array is it helfull
 
-
+/*
 int main(){
     int n;
     cin >> n;
@@ -93,3 +99,4 @@ int main(){
 
 // use map for string afterwards...
 
+*/

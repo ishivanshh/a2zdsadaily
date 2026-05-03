@@ -24,7 +24,7 @@ void selection_sort(int arr[], int n)
 
 // time complexity => o(n*n) but on adding a flag to check swaps it reduces to o(n) when the array is already sorted
 void bubble_sort(int arr[], int n){
-    for(int i = n-1; i>=0;i--){
+    for(int i = n-1; i >= 0; i--){
         bool didSwaps = false;
         for(int j = 0;j<=i-1;j++){
             if(arr[j] > arr[j+1]) {
