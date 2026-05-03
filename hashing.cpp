@@ -40,7 +40,7 @@ int main(){
 
 
 // hashing of strings in an array.
-/*
+
 int main(){
     string s;
     cin >> s;
@@ -61,7 +61,7 @@ int main(){
     return 0 ;
 }
 
-*/
+
 
 
 // using map STL for larger size of array is it helfull
