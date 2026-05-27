@@ -4,23 +4,40 @@ using namespace std;
 
 // maximum consecutive ones
 
-int maxConsecutiveOnes(vector <int> &arr) {
-   int count = 0;
-   int n = arr.size();
-   int maxCount = 0;
-   for (int i = 0; i < n; i++){
-    if (arr[i] == 1){
-        count ++;
-        maxCount = max(maxCount, count);
-    } else {
-        count = 0;
+int missingHash(vector <int>& arr){
+    int n = arr.size() + 1;
+
+    int hash[n + 1] = {0};
+
+    for (int i = 0 ;  i< n;i++){
+        hash[arr[i]] = 1;
     }
-   }
-   return maxCount;
+
+    for (int i = 1; i <= n; i++){
+        if (hash[i] == 0){
+            return i;
+        }
+    }
+    return -1;
 }
 
-int main() {
-    vector<int> arr = {1, 1, 0, 1, 1, 1, 0, 1}; 
-    cout << maxConsecutiveOnes(arr) << endl; 
+int missingSum(vector <int>&arr, int n){
+    int n = arr.size()+1;
+
+    int sum = (n * (n + 1)) / 2;
+    int sumofN = 0;
+
+    for (int i = 0; i < arr.size(); i++){
+        sumofN = arr[i] + sumofN;
+    }
+        sum = sum - sumofN;
+    return sum;
+}
+int main(){
+
+    vector<int> arr = {1,2,4,5};
+
+    cout << missingSum(arr);
+
     return 0;
 }
