@@ -5,7 +5,8 @@ using namespace std;
 
 
 // 1 => largest number in the array
-// first approch -> sort the array and return the last element 0(Nlogn)
+// first approch -> sort the array and return the last element 
+// 0(Nlogn)
 // second approch -> compare each element to next element and update if you found greater than that. O(N);
 
 
