@@ -26,9 +26,9 @@ int missingNum(vector<int>& arr) {
 int missingHash(vector <int>& arr){
     int n = arr.size() + 1;
 
-    int hash[n + 1] = {0};
+    vector<int> hash(n + 1, 0);
 
-    for (int i = 0 ;  i< n;i++){
+    for (int i = 0; i < arr.size(); i++){
         hash[arr[i]] = 1;
     }
 
@@ -40,11 +40,35 @@ int missingHash(vector <int>& arr){
     return -1;
 }
 
+int missingSum(vector <int>&arr, int n){
+    int sum = (n * (n + 1)) / 2;
+    int sumofN = 0;
+
+    for (int i = 0; i < arr.size(); i++){
+        sumofN = arr[i] + sumofN;
+    }
+        sum = sum - sumofN;
+    return sum;
+}
+
+int usingXOR(vector <int>&arr , int n){
+    int xor1 = 0;
+    int xor2 = 0;
+
+    for(int i = 1; i <= n; i++){
+        xor1 = xor1 ^ i;
+    }
+    for (int i = 0; i < arr.size(); i++){
+        xor2 = xor2 ^ arr[i];
+    }
+    return xor1 ^ xor2;
+}
+
 int main(){
 
     vector<int> arr = {1,2,4,5};
 
-    cout << missingHash(arr);
+    cout << usingXOR(arr, 5) << endl;
 
     return 0;
 }
