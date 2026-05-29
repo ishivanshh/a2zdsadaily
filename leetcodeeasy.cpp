@@ -2,55 +2,77 @@
 #include <vector>
 using namespace std;
 
+// // sort 0 , 1 , 2 in the array and arrange in ascending order 
+
+// Time Complexity: O(n),We traverse the array twice: once to count, once to overwrite. Each operation is O(n).
+// Space Complexity: O(1)
 class Solution {
-public:
-    // Function to check if any two numbers sum up to target (variant 1)
-    string twoSumExists(vector<int>& arr, int target) {
+    public : 
+    int sortedArray(vector <int>& arr){
         int n = arr.size();
-        // Outer loop picks one element at a time
-        for (int i = 0; i < n; i++) {
-            // Inner loop searches for another element that complements arr[i]
-            for (int j = i + 1; j < n; j++) {
-                // If sum equals target, return "YES"
-                if (arr[i] + arr[j] == target) {
-                    return "YES";
-                }
-            }
+        int count0 = 0;
+        int count1 =0;
+        int count2 = 0;
+
+        for (int i = 0 ; i < n; i++){
+            if (arr[i] == 0) count0 ++;
+            else if (arr[i] == 1) count1 ++;
+            else count2++;
         }
-        // No pair found that sums to target
-        return "NO";
+
+        int index = 0;
+
+        while(count0--) {
+            arr[index++] = 0;
+        };
+
+        while (count1 --){
+            arr[index++] = 1;
+        };
+
+        while (count2 --){
+            arr[index ++] = 2;
+        }
+    }
+};
+// second approch => simply 2 passes , first for identify no. of 0,1,2 then update them
+
+class Solution1 {
+    public :
+    int sortedArray1(vector <int>& arr){
+        int n = arr.size();
+
+        int count0 = 0;
+        int count1 =0;
+        int count2 = 0;
+
+        for (int i = 0 ; i < n; i++){
+            if (arr[i] == 0) count0 ++;
+            else if (arr[i] == 1) count1 ++;
+            else count2++;
+        }
+
+        for(int i = 0; i < count0 ; i++){
+            arr[i] = 0;
+        }
+        for(int i = count0; i < count0 + count1 ; i++){
+            arr[i] = 1;
+        }
+        for(int i = count1; i < count2 ; i++){
+            arr[i] = 2;
+        }
     }
 };
 
-class Solution2 {
-public:
-    // Variant 1: Check if two numbers sum to target using hashing
-    string hashedSum(vector<int>& arr, int target) {
-        unordered_map<int, int> mp;  // Map to store element -> index
-        int n = arr.size();
-        // Iterate over all elements
-        for (int i = 0; i < n; i++) {
-            int complement = target - arr[i];  // Needed value to reach target sum
-            // Check if complement is already in map
-            if (mp.find(complement) != mp.end()) {
-                return "YES";  // Pair found
-            }
-            // Store current element with its index for future reference
-            mp[arr[i]] = i;
-        }
-        // No pair found
-        return "NO";
-    };
-};
-
 int main() {
-    Solution2 sol;
+    vector<int> arr = {0, 2, 1, 2, 0, 1};
 
-    vector<int> arr = {1, 6, 5, 18, 11};
-    int target = 14;
+    Solution1 obj;
+    obj.sortedArray1(arr);
 
-    // Variant 1
-    cout << sol.hashedSum(arr, target) << "\n";
-    
+    for(int x : arr) {
+        cout << x << " ";
+    }
+
     return 0;
 }
