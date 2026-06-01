@@ -39,7 +39,8 @@ int missingHash(vector <int>& arr){
     }
     return -1;
 }
-
+// third approch => using sum formula to find the sum of first n natural numbers and then subtract the sum of the array from it to find the missing number
+// time complexity is o(n) and space complexity is o(1)
 int missingSum(vector <int>&arr, int n){
     int sum = (n * (n + 1)) / 2;
     int sumofN = 0;
@@ -50,6 +51,9 @@ int missingSum(vector <int>&arr, int n){
         sum = sum - sumofN;
     return sum;
 }
+// forth approch => using XOR operator to find the missing number
+// time complexity is o(n) and space complexity is o(1)
+
 
 int usingXOR(vector <int>&arr , int n){
     int xor1 = 0;

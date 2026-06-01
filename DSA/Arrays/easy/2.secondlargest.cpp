@@ -10,9 +10,9 @@ using namespace std;
 int secondLargestNumber(int arr[], int n){
     int secLargest = INT_MIN;
     int largest = INT_MIN;
-    if(n<2) return -1;       
+    if(n<2) return -1;       // if there is only one element then return -1
     for(int i = 0; i < n ; i++){
-        if(arr[i] > largest){
+        if(arr[i] > largest){       
             secLargest = largest;
             largest = arr[i];
         } else if(arr[i] > secLargest && arr[i] != largest){

@@ -5,8 +5,8 @@ using namespace std;
 // number that appears once , other number appears twice
 // TC : 0(N*N)
 // SC : 0(1)
-/*
-class Solution{
+
+class Solution1{
     public: 
     int getSingleElement(vector<int>& arr){
         int n = arr.size();
@@ -27,7 +27,7 @@ class Solution{
     }
 };
 
-*/
+
 
 // HASHING => 
 //TC :- O(N) + 0(N) + 0(N)
@@ -76,8 +76,8 @@ public:
 int main() {
     vector<int> arr = {4, 4, 2, 1, 2};
 
-    Solution obj;
-    int ans = obj.singleEleHashing(arr);
+    Solution1 obj1;
+    int ans = obj1.getSingleElement(arr);
 
     cout << "The single element is: " << ans << endl;
 

@@ -8,8 +8,6 @@ using namespace std;
 // TC => 0(N*N*N)
 // SC => O(1)
 
-/*
-
 class Solution {
     public : 
     int longestSubbarray(vector<int>& arr , int k){
@@ -33,8 +31,10 @@ class Solution {
     }
 };
 
-*/
 
+// second approch using two pointer where keeping left pointer at the start and right pointer at the start and keep on adding the right pointer value to sum and if sum is greater than k then keep on removing the left pointer value from sum and move left pointer to the right until sum is less than or equal to k and if sum is equal to k then update the max length of subarray
+// TC => O(N)
+// SC => O(1)
 
 class Solution {
     public : 
