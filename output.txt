@@ -1,1 +1,1 @@
-Leaders in the array are: 6 12 22 
+The longest consecutive sequence is 5
