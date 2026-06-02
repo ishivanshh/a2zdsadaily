@@ -82,8 +82,8 @@ class Solution3 {
 int main() {
     Solution2 sol;
 
-    vector<int> arr = {1, 6, 5, 18, 11};
-    int target = 14;
+    vector<int> arr = {1, 6, 5, 18, 12};
+    int target = 11;
 
     // Variant 1
     cout << sol.hashedSum(arr, target) << "\n";

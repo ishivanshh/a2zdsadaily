@@ -31,7 +31,7 @@ int missingHash(vector <int>& arr){
     for (int i = 0; i < arr.size(); i++){
         hash[arr[i]] = 1;
     }
-
+    
     for (int i = 1; i <= n; i++){
         if (hash[i] == 0){
             return i;
