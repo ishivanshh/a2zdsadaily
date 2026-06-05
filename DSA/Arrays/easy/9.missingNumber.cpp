@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
 // first approch is to linear search for mis
 int missingNum(vector<int>& arr) {
     int n = arr.size() + 1;

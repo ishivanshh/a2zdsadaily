@@ -8,6 +8,14 @@ using namespace std;
 // first approch -> sort the array and return the last element 
 // 0(Nlogn)
 
+
+int largestNumberWithSorting(vector<int>& arr){
+    sort(arr.begin(), arr.end());
+    
+    // Return the last element (largest element) after sorting
+    return arr[arr.size() - 1];
+};
+
 // second approch -> compare each element to next element and update if you found greater than that. O(N);
 
 

@@ -2,7 +2,8 @@
 
 using namespace std;
 // left rotate an array by k steps 
-// firslt do k = k % n in case k is greater than n , store first k elements in a temp array shift remaining elements to the left and then put back temp array elements to the end of the original array
+
+// firslt do {k = k % n} in case k is greater than n , store first k elements in a temp array shift remaining elements to the left and then put back temp array elements to the end of the original array
 
 // time complexity O(n) and space complexity O(k)
 

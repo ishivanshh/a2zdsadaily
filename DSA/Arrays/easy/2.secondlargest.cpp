@@ -5,7 +5,14 @@ using namespace std;
 
 // first approch -> sort the array and print the second last element 0(NlogN)
 
-// second approch -> assume 2 variable(largest , secLargest) compare each element of array with largest element if found greater update that to largest and the largest element goes to seclargest also check if largest = seclargest wont be same element. 0(N)
+int secondLargestWithSorting(vector<int>& arr , int n){
+    sort(arr.begin() , arr.end());
+
+    return arr[arr.size() - 2];
+};
+
+
+// second approch -> assume 2 variable(largest , secLargest) compare each element of array with largest element if found greater update that to largest and the largest element goes to seclargest also check if largest = seclargest wont be same element time complexity =>  0(N)
 
 int secondLargestNumber(int arr[], int n){
     int secLargest = INT_MIN;

@@ -6,6 +6,7 @@ using namespace std;
 // TC : 0(N*N)
 // SC : 0(1)
 
+
 class Solution1{
     public: 
     int getSingleElement(vector<int>& arr){
