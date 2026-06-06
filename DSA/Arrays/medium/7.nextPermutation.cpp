@@ -9,6 +9,7 @@ using namespace std;
 
 // time complexity : O(n) + O(n) + O(n) = O(3n)
 // space complexity : O(1)
+
 // second approch : implemntation of next permutation without using STL function
 class Solution {
     public : 

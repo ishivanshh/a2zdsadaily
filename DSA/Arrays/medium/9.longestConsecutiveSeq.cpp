@@ -21,7 +21,7 @@ class Solution {
     int longestSequence(vector <int>& nums){
         int n = nums.size();
         int longest = 1;
-        for (int i = 0; i <n;i++){
+        for (int i = 0; i < n ; i++){
             int x = nums[i];
             int count = 1;
 
