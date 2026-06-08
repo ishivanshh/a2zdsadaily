@@ -4,19 +4,20 @@
 #include <unordered_set>
     
 using namespace std;
-// first approch is to mark the row and column with -1 and then change all -1 to 0 , time complexity is TC => 0(N*M) + 0(N+M) + 0(N*M) => 0(N*M) and space complexity is SC => 0(1) as we are not using any extra space
+// first approch is to mark the row and column with -1 and then change all -1 to 0 , TC => 0(N*M) + 0(N+M) + 0(N*M) => 0(N*M) and space complexity is SC => 0(1) as we are not using any extra space
 
 class Solution {
     public : 
-    int markRow(vector <vector <int>> & matrix, int i){
-        int n = matrix[0].size(); // columns
-        for (int j = 0; j < n; j++){
+    void markRow(vector <vector <int>> & matrix, int i){ // got row number as i 
+        int n = matrix[0].size(); // columns 
+        // loop through all the column of that row.
+        for (int j = 0; j < n; j++){ 
             if(matrix[i][j] != 0){ 
                 matrix[i][j] = -1;
             }
         }
     }
-    int markCol(vector <vector <int>> & matrix, int j){
+    void markCol(vector <vector <int>> & matrix, int j){
         int m = matrix.size(); // rows 
         for (int i = 0; i < m; i++){
             if(matrix[i][j] != 0){
@@ -24,19 +25,19 @@ class Solution {
             }
         }
     }
-    int setZeroes(vector <vector <int>> & matrix){
+    void setZeroes(vector <vector <int>> & matrix){
         int m = matrix.size(); // rows
         int n = matrix[0].size(); // columns
         for (int i = 0; i < m; i ++){
             for (int j = 0; j < n; j++){
-                if (matrix [i][j] == 0){
+                if (matrix [i][j] == 0){ // matrix[row][column]
                     markRow(matrix , i);  // i => row 
                     markCol(matrix, j);  // j => column
                 }
             }
         }
-        for(int i = 0; i < n ; i++){
-            for (int j = 0; j < m; j++){
+        for(int i = 0; i < m ; i++){
+            for (int j = 0; j < n; j++){
                 if (matrix[i][j] == -1){
                     matrix[i][j] = 0;
                 }
@@ -65,7 +66,7 @@ class Solution1 {
         }
         for (int i = 0; i < n; i++){
             for (int j = 0; j < n; j++){
-                if(row[i] || col[j]){
+                if(row[i] || col[j] == 1){
                     matrix[i][j] = 0;
                 }
             }
@@ -93,9 +94,10 @@ class Solution2{
                         matrix[0][j] = 0;
                     else 
                         col0 = 0;
-                    }
                 }
             }
+        }
+
         for (int i = 1; i < m ; i++){
             for (int j = 1; j < n; j++){
                 if (matrix[i][j] != 0 ){
@@ -105,16 +107,19 @@ class Solution2{
                 }
             }
         }
+
         if (matrix[0][0] == 0){
             for (int j = 0; j < n; j++){
                 matrix[0][j] = 0;
             }
         }
+
         if (col0 == 0){
             for (int i = 0; i < m; i++){
                 matrix[i][0] = 0;
             }
         }
+
     }
 };
 

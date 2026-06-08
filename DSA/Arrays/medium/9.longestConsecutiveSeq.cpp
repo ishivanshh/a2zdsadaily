@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include<set>
 #include <vector>
 #include <unordered_set>
     
@@ -78,8 +79,40 @@ public:
 
 // third approch 
 
+class Solution {
+    public :
+    int longestConsecutiveSeqSet(vector<int>&nums){
+        int n = nums.size();
 
+        unordered_set<int>st;
+        for (int i = 0; i < n ; i++){
+            st.insert(nums[i]);
+        }
 
+        int count = 0;
+        int longest = 1;
+
+        for (auto it : st) {
+            // search it -1 exist in set if not found then that will starting seq number 
+            if (st.find(it - 1) == st.end()) {
+                // Initialize the count of the current sequence
+                int cnt = 1; 
+                // Starting element of the sequence
+                int x = it;
+                // works untill we will got x+1 term in set when we stop getting x+1 terms in set it will stop. 
+                while (st.find(x + 1) != st.end()) {
+                    // Move to the next element in the sequence
+                    x = x + 1; 
+                    // Increment the count of the sequence
+                    cnt = cnt + 1; 
+                }
+                // Update the longest sequence length
+                longest = max(longest, cnt);
+            }
+        }
+        return longest;
+    }
+};
 int main() {
     vector<int> a = {100, 4, 200, 1, 3, 2, 5, 101}; 
 
