@@ -55,6 +55,10 @@ class Solution {
         return vector<vector<int>>(ans.begin(), ans.end());
     }
 };
+
+// third approch 
+
+
 int main() {
     vector<int> arr = {-1, 0, 1, 2, -1, -4};
     Solution obj;
