@@ -14,7 +14,7 @@ int leftRotate(int arr[] , int n, int k){
         temp[i] = arr[i];
     }
     // shift the remaining elements to the left
-    for(int i =k ; i < n; i++){
+    for(int i = k ; i < n; i++){
         arr[i-k] = arr[i];
     }
     // copy the elements from the temporary array to the end of the original array

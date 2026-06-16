@@ -5,10 +5,9 @@ using namespace std;
 
 
 // 1 => largest number in the array
+
 // first approch -> sort the array and return the last element 
 // 0(Nlogn)
-
-
 int largestNumberWithSorting(vector<int>& arr){
     sort(arr.begin(), arr.end());
     
@@ -28,6 +27,7 @@ int largestNumber(int arr[], int n){
      }
      return max;
 }
+
 
 int main() {
     int arr[6];
