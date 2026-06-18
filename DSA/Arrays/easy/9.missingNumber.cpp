@@ -2,8 +2,7 @@
 #include <vector>
 using namespace std;
 
-// first approch is to linear search for missing number in array 
-// 
+// first approch is to linear search for missing number in array  
 int missingNum(vector<int>& arr) {
     int n = arr.size() + 1;
     // Iterate from 1 to n and check

@@ -14,14 +14,16 @@ bool checkSorted(int arr[], int n){
 }
 
 // check for sorted array with rotate array 
+// tc => 0(n) and sc => 0(1)
 
-bool check(vector<int>& nums) {
-        int n = nums.size();
+
+bool check(int arr[], int) {
+        int n = arr.size();
         int counter = 0;
-        for(int i =0;i<n;i++){
+        for(int i = 0 ; i < n ; i++){
             //This is used to compare the last element with the first element.
-            
-            if(nums[i]>nums[(i+1) % n]){
+            // 2 % 5 = 2 
+            if(arr[i]>arr[(i+1) % n]){
                 counter ++;
             } 
         }
@@ -29,13 +31,13 @@ bool check(vector<int>& nums) {
 };
 
 int main(){
-    int n;
+    int n; 
     cin >> n;
     int arr[n];
     for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
-    if(checkSorted(arr, n)){
+    if(check(arr, n)){
         cout << "Sorted";
     }
     else{

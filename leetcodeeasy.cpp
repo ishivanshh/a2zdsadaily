@@ -1,51 +1,37 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
+#include<iostream>
+#include<vector>
 
 using namespace std;
 
 class Solution {
 public:
-    string reverseWords(string s) {
-        vector<string> words;
-        string word = "";
+    // Function to perform Binary Search on sorted array
+    int binarySearch(vector<int>nums, int target) {
+        int n = nums.size(); // size of the array
+        int low = 0, high = n - 1;
 
-        for (int i = 0; i < s.size(); i++) {
-            if (s[i] += ' ') {
-                word += s[i];
-            }
-            else if (!word.empty()) {
-                words.push_back(word);
-                word = "";
-            }
+        // Keep searching until low crosses high
+        while (low <= high) {
+            int mid = (low + high) / 2; // Find the middle index
+            if (nums[mid] == target) return mid;       // Target found
+            else if (target > nums[mid]) low = mid + 1; // Search in right half
+            else high = mid - 1;                        // Search in left half
         }
-
-        if (!word.empty()) {
-            words.push_back(word);
-        }
-
-        reverse(words.begin(), words.end());
-
-        string result = "";
-
-        for (int i = 0; i < words.size(); i++) {
-            result += words[i];
-
-            if (i < words.size() - 1) {
-                result += " ";
-            }
-        }
-
-        return result;
+        return -1; // Target not found
     }
 };
 
-int main() {
-    Solution obj;
-    string s = " amazing coding skills ";
+int main()
+{
+    vector<int> arr = {3, 4, 6, 7, 9, 12, 16, 17}; // sorted array
+    int target = 6; // target element to search
 
-    cout << obj.reverseWords(s) << endl;
+    Solution obj; // Create object of Solution class
+    int ind = obj.binarySearch(arr, target);
+
+    if (ind == -1) cout << "The target is not present." << endl;
+    else cout << "The target is at index: " << ind << endl;
 
     return 0;
 }
+
