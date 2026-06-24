@@ -16,9 +16,7 @@ bool checkSorted(int arr[], int n){
 // check for sorted array with rotate array 
 // tc => 0(n) and sc => 0(1)
 
-
-bool check(int arr[], int) {
-        int n = arr.size();
+bool check(int arr[] , int n) {
         int counter = 0;
         for(int i = 0 ; i < n ; i++){
             //This is used to compare the last element with the first element.
