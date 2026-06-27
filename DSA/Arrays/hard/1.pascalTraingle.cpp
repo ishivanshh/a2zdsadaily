@@ -4,8 +4,6 @@
 
 using namespace std;
 
-
-
 // pascal traingle 
 class Solution {
 public:
