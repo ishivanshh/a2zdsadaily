@@ -1,44 +1,37 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 
 class Solution {
     public :
-    int findMin(vector<int>nums ){
-        int n = nums.size();
-        int low = 0;
-        int high = n-1;
-        int ans = INT_MAX;
-        while(low <= high){
-            int mid = ( low + high ) / 2;
+    int nthRoot(int n , int k){
+        if(k<2) return 1;
+        int low = 1;
+        int high = k/2;
+         while (low <= high) {
+            // Calculate mid
+            int mid = (low + high) / 2;
 
-            // checking for left half to be sorted
-            if(nums[low] <= nums[mid]){
-                ans = min(nums[low] , ans);
-                low = mid +1;
-            } else {
-                ans = min(nums[mid] , ans);
-                high = mid - 1;
+            // Store result of mid^n
+            long long ans = 1;
+            for (int i = 0; i < n; i++) {
+                ans *= mid;
+                if (ans > m) break;
             }
+
+            // If mid^n equals m
+            if (ans == m) return mid;
+
+            // If mid^n is less than m
+            if (ans < m) low = mid + 1;
+
+            // If mid^n is more than m
+            else high = mid - 1;
         }
-        return ans;
     }
 };
 
-
 int main() {
-
-    // Input array
-    vector<int> nums = {4, 5, 6, 7, 1, 2};
-
-    // Create object of Solution
-    Solution sol;
-
-    // Call function and store result
-    int result = sol.findMin(nums);
-
-    // Output the result
-    cout << "Minimum element is " << result << endl;
-
+    Solution obj;
+    int result = obj.nthRoot(3, 27);
     return 0;
 }
