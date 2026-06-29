@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+// brute force => to tell the maximum and min element with the max and min freq in an array. time cpmplexity =>o(n*n)
 
 int main() {
     int n ;
@@ -38,3 +39,5 @@ int main() {
     cout << minFreq << " " << "\n";
     return 0;
 }
+
+// Optimized Approach:- Use Hashmap to Store the Frequencies of Elements where key will be the Array Element and Value will be the Frequency of Array Element and Update our Maximum and Minimum Frequencies accordingly.
